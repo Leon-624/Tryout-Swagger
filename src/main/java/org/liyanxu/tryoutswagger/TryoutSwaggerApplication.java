@@ -11,6 +11,7 @@ import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.liyanxu.tryoutswagger.api.api.TryoutSwaggerApi;
 import org.liyanxu.tryoutswagger.resources.TryoutSwaggerResource;
 import org.liyanxu.tryoutswagger.service.TryoutSwaggerApiImpl;
+import org.liyanxu.tryoutswagger.managed.ApiInfoManaged;
 import zone.dragon.dropwizard.HK2Bundle;
 import javax.inject.Singleton;
 
@@ -57,6 +58,12 @@ public class TryoutSwaggerApplication extends Application<TryoutSwaggerConfigura
         });
 
         jersey.register(TryoutSwaggerResource.class);
+
+        jersey.register(ApiInfoManaged.class);  // Create Managed class by DI
+        /*
+        Instead of:
+        env.lifecycle().manage(new ApiInfoManaged(...));
+         */
     }
 
 }

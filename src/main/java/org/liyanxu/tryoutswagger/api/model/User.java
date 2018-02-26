@@ -1,5 +1,6 @@
 package org.liyanxu.tryoutswagger.api.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 import javax.validation.constraints.NotNull;
 import java.time.Instant;
@@ -11,16 +12,15 @@ import java.util.UUID;
 @NoArgsConstructor
 public class User {
 
-    @NonNull
     @NotNull(message = "uuid can not be null")
     private UUID uuid;
 
-    @NonNull
     @NotNull(message = "name can not be null")
     private String name;
 
     private int age;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Instant lastUpdate;
 
 }
