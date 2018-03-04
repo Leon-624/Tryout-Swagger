@@ -2,10 +2,10 @@ package org.liyanxu.tryoutswagger.resources;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.NonNull;
 import org.liyanxu.tryoutswagger.api.api.TryoutSwaggerApi;
 import org.liyanxu.tryoutswagger.api.model.User;
 import javax.inject.Inject;
-import javax.validation.constraints.NotNull;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
@@ -18,7 +18,7 @@ public class TryoutSwaggerResource {
     private final TryoutSwaggerApi api;
 
     @Inject
-    public TryoutSwaggerResource(@NotNull TryoutSwaggerApi api) {
+    public TryoutSwaggerResource(@NonNull TryoutSwaggerApi api) {
         this.api = api;
     }
 
