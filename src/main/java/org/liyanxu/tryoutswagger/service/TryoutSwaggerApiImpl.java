@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class TryoutSwaggerApiImpl implements TryoutSwaggerApi {
 
-    private AtomicInteger counter;
+    private final AtomicInteger counter;
 
     public TryoutSwaggerApiImpl() {
         counter = new AtomicInteger(0);
